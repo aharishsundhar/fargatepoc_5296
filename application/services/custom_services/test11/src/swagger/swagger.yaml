@@ -1,0 +1,47 @@
+---
+openapi: 3.0.0
+info:
+   version: 1.3.0
+   title: fargatepoc open api specification
+   description: test11 API
+   termsOfService: http://api_url/terms/
+   contact:
+      name: ContactName
+      email: hello@wolox.co
+      url: https://www.wolox.com.ar/
+   license:
+      name: Apache 2.0
+      url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+   - url: http://localhost:8027
+     description: test11
+tags:
+- name: test11
+paths:
+   "/test11":
+      post:
+         tags:
+         -  test11
+         description: GpCreate
+         requestBody:
+            content:
+               application/json:
+                  schema:
+                     $ref: "#/components/schemas/test11"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+components:
+   schemas:
+      test11:
+         type: object
+         properties:
+            name:
+               type: "string"
+               description: Description
